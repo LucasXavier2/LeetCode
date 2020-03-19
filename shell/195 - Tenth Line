@@ -1,0 +1,20 @@
+#!/bin/bash
+#Description of the problem - https://leetcode.com/problems/tenth-line/
+
+#Solution:
+sed -n 10p file.txt 
+
+
+
+#The -n flag suppress automatic printing of pattern space
+#Source: sed manual
+
+#When sed reads a file line by line, the line that has been currently read is inserted into the pattern buffer (pattern space).
+#Pattern buffer is like the temporary buffer, the scratchpad where the current information is stored. 
+#When you tell sed to print, it prints the pattern buffer.
+#Source: https://stackoverflow.com/questions/12833714/the-concept-of-hold-space-and-pattern-space-in-sed
+
+
+#You can also print intervals separating line numbers by a comma
+#sed -n 8,10p test_text.txt 
+#This will print lines 8, 9 and 10
